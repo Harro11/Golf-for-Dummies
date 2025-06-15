@@ -1,0 +1,175 @@
+import React from "react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import { Youtube } from "lucide-react";
+
+export default function GolfTips() {
+  return (
+    <div className="p-6 max-w-5xl mx-auto">
+      <h1 className="text-4xl font-bold mb-6 text-center">🏌️‍♂️ Master Your Golf Game</h1>
+      <Tabs defaultValue="swing" className="w-full">
+        <TabsList className="grid grid-cols-6 gap-2">
+          <TabsTrigger value="swing">Swing Tips</TabsTrigger>
+          <TabsTrigger value="clubs">Recommended Clubs</TabsTrigger>
+          <TabsTrigger value="mindset">Mental Mindset</TabsTrigger>
+          <TabsTrigger value="practice">Practice & Warm-Up</TabsTrigger>
+          <TabsTrigger value="videos">Videos</TabsTrigger>
+          <TabsTrigger value="resources">Resources</TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="swing">
+          <Card>
+            <CardContent className="space-y-4 p-4">
+              <h2 className="text-2xl font-semibold">Swing Tips</h2>
+              <motion.ul
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3 }}
+                className="list-disc ml-6"
+              >
+                <li>Focus on a consistent grip and posture.</li>
+                <li>Keep your head steady and eyes on the ball.</li>
+                <li>Practice tempo — smooth backswing and follow-through.</li>
+                <li>Use alignment sticks to perfect aim and stance.</li>
+                <li>Film your swing for feedback and corrections.</li>
+              </motion.ul>
+              <img
+                src="https://www.golfdigest.com/content/dam/images/golfdigest/fullset/2016/07/12/5785126aa5e4e46e2f1e6207_swing.jpg"
+                alt="Golf Swing"
+                className="rounded-2xl shadow-md"
+              />
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="clubs">
+          <Card>
+            <CardContent className="space-y-4 p-4">
+              <h2 className="text-2xl font-semibold">Recommended Clubs</h2>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <h3 className="font-bold">Beginners</h3>
+                  <ul className="list-disc ml-6">
+                    <li>Callaway Strata Set</li>
+                    <li>Wilson Ultra Complete Set</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-bold">Intermediate</h3>
+                  <ul className="list-disc ml-6">
+                    <li>TaylorMade RBZ</li>
+                    <li>Cobra Fly-Z</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-bold">Advanced</h3>
+                  <ul className="list-disc ml-6">
+                    <li>Titleist T300 Irons</li>
+                    <li>Ping G430 Series</li>
+                  </ul>
+                </div>
+              </div>
+              <img
+                src="https://cdn.thewirecutter.com/wp-content/media/2022/05/golfclubs-2048px-5034.jpg"
+                alt="Recommended Clubs"
+                className="rounded-2xl shadow-md"
+              />
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="mindset">
+          <Card>
+            <CardContent className="space-y-4 p-4">
+              <h2 className="text-2xl font-semibold">Mental Mindset</h2>
+              <ul className="list-disc ml-6">
+                <li>Visualize every shot before swinging.</li>
+                <li>Stay calm under pressure using breathing techniques.</li>
+                <li>Embrace failure as learning, not defeat.</li>
+                <li>Focus only on the current shot — not past or future.</li>
+              </ul>
+              <img
+                src="https://www.golfwrx.com/wp-content/uploads/2020/11/Mindful-Golf.jpg"
+                alt="Mental Golf"
+                className="rounded-2xl shadow-md"
+              />
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="practice">
+          <Card>
+            <CardContent className="space-y-4 p-4">
+              <h2 className="text-2xl font-semibold">Practice & Warm-Up</h2>
+              <div>
+                <h3 className="font-bold">Warm-Up</h3>
+                <ul className="list-disc ml-6">
+                  <li>5 mins dynamic stretching: shoulders, hips, wrists.</li>
+                  <li>Hit 10 balls each with wedge, iron, and driver.</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-bold">Drills</h3>
+                <ul className="list-disc ml-6">
+                  <li>Gate drill for putting accuracy</li>
+                  <li>Foot spray to monitor driver contact</li>
+                  <li>Impact bag to feel proper compression</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-bold">Weekly Plan</h3>
+                <ul className="list-disc ml-6">
+                  <li>Mon/Wed: Range (irons, driver)</li>
+                  <li>Tue/Thu: Short game focus</li>
+                  <li>Fri: Course play + mental game</li>
+                </ul>
+              </div>
+              <img
+                src="https://golf.com/wp-content/uploads/2022/07/golf-drills-range.jpg"
+                alt="Warm-Up Practice"
+                className="rounded-2xl shadow-md"
+              />
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="videos">
+          <Card>
+            <CardContent className="space-y-4 p-4">
+              <h2 className="text-2xl font-semibold">Instructional Videos</h2>
+              <div className="grid md:grid-cols-2 gap-4">
+                <iframe
+                  className="rounded-2xl shadow-md w-full h-64"
+                  src="https://www.youtube.com/embed/DpZUJkA99Mo"
+                  title="Golf Warm-Up"
+                  allowFullScreen
+                ></iframe>
+                <iframe
+                  className="rounded-2xl shadow-md w-full h-64"
+                  src="https://www.youtube.com/embed/6kV-RlD6vkk"
+                  title="Golf Swing Tips"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="resources">
+          <Card>
+            <CardContent className="space-y-4 p-4">
+              <h2 className="text-2xl font-semibold">Downloadable Resources</h2>
+              <ul className="list-disc ml-6">
+                <li><a href="#" className="text-blue-600 underline">Weekly Practice Schedule PDF</a></li>
+                <li><a href="#" className="text-blue-600 underline">Mental Focus Checklist</a></li>
+                <li><a href="#" className="text-blue-600 underline">Golf Swing Fundamentals Guide</a></li>
+              </ul>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+      </Tabs>
+    </div>
+  );
+}
